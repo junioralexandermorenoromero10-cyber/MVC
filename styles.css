@@ -65,9 +65,9 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .button-outline { border-color: rgba(255,255,255,.45); color: var(--color-text); background: rgba(10,10,13,.2); }
 .button-outline:hover { border-color: var(--color-gold); color: var(--color-gold-light); }
 .wa-icon { font-size: 16px; line-height: 1; }
-.hero-note { display: flex; align-items: center; gap: 9px; color: #c0bdb8; font-size: 11px; margin-top: 27px; letter-spacing: .03em; }
+.hero-note { display: flex; width: fit-content; max-width: 100%; align-items: center; gap: 9px; color: #c0bdb8; font-size: 11px; margin-top: 27px; letter-spacing: .03em; }
 .status-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--color-gold); box-shadow: 0 0 10px rgba(212,175,55,.75); }
-.hero-scroll { position: absolute; bottom: 30px; left: 0; display: flex; gap: 14px; align-items: center; color: #aaa6a0; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; }
+.hero-scroll { position: absolute; right: 0; bottom: 30px; display: flex; gap: 14px; align-items: center; color: #aaa6a0; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; }
 .hero-scroll span:last-child { color: var(--color-gold); font-size: 18px; animation: arrow-bob 1.7s ease infinite; }
 .hero-stamp { position: absolute; right: 4.5%; bottom: 87px; display: flex; align-items: center; gap: 11px; color: rgba(255,255,255,.55); font-size: 8px; letter-spacing: .2em; transform: rotate(-90deg); transform-origin: right center; }
 .hero-stamp i { color: var(--color-gold); font-size: 14px; font-style: normal; }
@@ -258,7 +258,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .hero-actions { align-items: stretch; flex-direction: column; max-width: 290px; }
   .hero-actions .button { width: 100%; min-height: 49px; }
   .hero-note { font-size: 9px; margin-top: 20px; }
-  .hero-scroll { bottom: 24px; font-size: 8px; }
+  .hero-scroll { right: auto; bottom: 24px; left: 0; font-size: 8px; }
   .hero-stamp { display: none; }
   .trust-inner { display: grid; grid-template-columns: 1fr; gap: 0; padding: 9px 0; }
   .trust-inner span { padding: 7px 0; font-size: 10px; }
