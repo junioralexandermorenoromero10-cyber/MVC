@@ -44,7 +44,7 @@ const CONFIG = {
     { title: "Música para celebrar", subtitle: "Mariachi Voces de Colombia · Acacías, Meta", image: "images/videos/musica-para-celebrar.jpg", url: "https://www.youtube.com/watch?v=zhKCUT3xcVs" },
     { title: "Momentos inolvidables", subtitle: "21 de octubre de 2026", image: "images/videos/momentos-inolvidables.jpg", url: "https://www.youtube.com/watch?v=ZA683NGkYX4" },
     { title: "Show del más grande", subtitle: "Una presentación para recordar", image: "images/videos/show-del-mas-grande.jpg", url: "https://youtube.com/watch?v=meJNZMwgn9U&feature=shared" },
-    { title: "Baile exótico vaquero", subtitle: "Presentación en vivo", image: "images/videos/baile-exotico-vaquero.jpg", portrait: true, url: "https://youtube.com/shorts/Je32Y4DLthg?si=KDwx-hdVpr1fjjVN" }
+    { title: "Baile exótico vaquero", subtitle: "Presentación en vivo", image: "images/videos/baile-exotico-vaquero.jpg", portrait: true, url: "https://www.facebook.com/share/v/1FBWbi944E/" }
   ],
   photos: [
     { alt: "Cantante del Mariachi Voces de Colombia en escena", image: "images/videos/show-del-mas-grande.jpg" },
