@@ -43,7 +43,8 @@ const CONFIG = {
     { title: "Serenata en vivo", subtitle: "19 de octubre de 2026", image: "images/videos/serenata-en-vivo.jpg", url: "https://www.youtube.com/watch?v=Ueil0tiFA0E" },
     { title: "Música para celebrar", subtitle: "Mariachi Voces de Colombia · Acacías, Meta", image: "images/videos/musica-para-celebrar.jpg", url: "https://www.youtube.com/watch?v=zhKCUT3xcVs" },
     { title: "Momentos inolvidables", subtitle: "21 de octubre de 2026", image: "images/videos/momentos-inolvidables.jpg", url: "https://www.youtube.com/watch?v=ZA683NGkYX4" },
-    { title: "Show del más grande", subtitle: "Una presentación para recordar", image: "images/videos/show-del-mas-grande.jpg", url: "https://youtube.com/watch?v=meJNZMwgn9U&feature=shared" }
+    { title: "Show del más grande", subtitle: "Una presentación para recordar", image: "images/videos/show-del-mas-grande.jpg", url: "https://youtube.com/watch?v=meJNZMwgn9U&feature=shared" },
+    { title: "Baile exótico vaquero", subtitle: "Presentación en vivo", image: "images/videos/baile-exotico-vaquero.jpg", portrait: true, url: "https://youtube.com/shorts/Je32Y4DLthg?si=KDwx-hdVpr1fjjVN" }
   ],
   photos: [
     { alt: "Cantante del Mariachi Voces de Colombia en escena", image: "images/videos/show-del-mas-grande.jpg" },
@@ -105,8 +106,12 @@ function renderEvents() {
 
 function renderVideos() {
   document.querySelector("#video-grid").innerHTML = CONFIG.videos.map((video) => {
-    const poster = `<div class="video-poster"><img src="${video.image}" alt="" loading="lazy" decoding="async">${video.url ? '<span class="video-play" aria-hidden="true">▶</span>' : ""}</div>`;
-    const media = video.url
+    const posterClass = video.portrait ? "video-poster video-poster--portrait" : "video-poster";
+    const poster = `<div class="${posterClass}"><img src="${video.image}" alt="" loading="lazy" decoding="async">${video.url ? '<span class="video-play" aria-hidden="true">▶</span>' : ""}</div>`;
+    const player = `<div class="video-poster"><video controls preload="none" playsinline poster="${video.image}" aria-label="Reproducir ${video.title}"><source src="${video.src}" type="video/mp4">Tu navegador no admite la reproducción de este video.</video></div>`;
+    const media = video.src
+      ? player
+      : video.url
       ? `<a href="${video.url}" target="_blank" rel="noopener noreferrer" aria-label="Ver ${video.title} en YouTube">${poster}</a>`
       : poster;
     return `
