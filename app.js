@@ -43,7 +43,7 @@ const CONFIG = {
     { title: "Serenata en vivo", subtitle: "19 de octubre de 2026", image: "images/videos/serenata-en-vivo.jpg", url: "https://www.youtube.com/watch?v=Ueil0tiFA0E" },
     { title: "Música para celebrar", subtitle: "Mariachi Voces de Colombia · Acacías, Meta", image: "images/videos/musica-para-celebrar.jpg", url: "https://www.youtube.com/watch?v=zhKCUT3xcVs" },
     { title: "Momentos inolvidables", subtitle: "21 de octubre de 2026", image: "images/videos/momentos-inolvidables.jpg", url: "https://www.youtube.com/watch?v=ZA683NGkYX4" },
-    { title: "Show del más grande", subtitle: "Una presentación para recordar", image: "images/videos/show-del-mas-grande.jpg", url: "" }
+    { title: "Show del más grande", subtitle: "Una presentación para recordar", image: "images/videos/show-del-mas-grande.jpg", url: "https://youtube.com/watch?v=meJNZMwgn9U&feature=shared" }
   ],
   photos: [
     { alt: "Cantante del Mariachi Voces de Colombia en escena", image: "images/videos/show-del-mas-grande.jpg" },
