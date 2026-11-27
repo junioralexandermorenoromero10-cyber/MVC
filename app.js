@@ -40,17 +40,18 @@ const CONFIG = {
     { title: "Eventos empresariales", icon: "♧" }
   ],
   videos: [
-    { title: "Serenata en vivo", subtitle: "La emoción de una gran sorpresa", image: "https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=900&q=80", url: "https://www.youtube.com/results?search_query=mariachi+serenata+en+vivo" },
-    { title: "Música para celebrar", subtitle: "Tradición que se siente", image: "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=900&q=80", url: "https://www.youtube.com/results?search_query=mariachi+musica+en+vivo" },
-    { title: "Momentos inolvidables", subtitle: "Alegría para compartir", image: "https://images.unsplash.com/photo-1501612780327-45045538702b?auto=format&fit=crop&w=900&q=80", url: "https://www.youtube.com/results?search_query=mariachi+presentacion+en+vivo" }
+    { title: "Serenata en vivo", subtitle: "19 de octubre de 2026", image: "images/videos/serenata-en-vivo.jpg", url: "https://www.youtube.com/watch?v=Ueil0tiFA0E" },
+    { title: "Música para celebrar", subtitle: "Mariachi Voces de Colombia · Acacías, Meta", image: "images/videos/musica-para-celebrar.jpg", url: "https://www.youtube.com/watch?v=zhKCUT3xcVs" },
+    { title: "Momentos inolvidables", subtitle: "21 de octubre de 2026", image: "images/videos/momentos-inolvidables.jpg", url: "https://www.youtube.com/watch?v=ZA683NGkYX4" },
+    { title: "Show del más grande", subtitle: "Una presentación para recordar", image: "images/videos/show-del-mas-grande.jpg", url: "" }
   ],
   photos: [
-    { alt: "Músicos en una presentación en vivo", image: "https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=1100&q=85" },
-    { alt: "Público disfrutando de la música en vivo", image: "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=900&q=85" },
-    { alt: "Celebración con música y luces", image: "https://images.unsplash.com/photo-1501612780327-45045538702b?auto=format&fit=crop&w=900&q=85" },
-    { alt: "Artista interpretando una canción", image: "https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=1100&q=85&sat=-20" },
-    { alt: "Escenario iluminado durante un concierto", image: "https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=900&q=85" },
-    { alt: "Celebración musical al aire libre", image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=900&q=85" }
+    { alt: "Cantante del Mariachi Voces de Colombia en escena", image: "images/videos/show-del-mas-grande.jpg" },
+    { alt: "Mariachi Voces de Colombia reunido durante una presentación", image: "images/gallery/mariachi-en-restaurante.jpg" },
+    { alt: "Mariachi Voces de Colombia en un show sobre el escenario", image: "images/gallery/show-mariachi.jpg" },
+    { alt: "Mariachi Voces de Colombia en una presentación en vivo", image: "images/videos/musica-para-celebrar.jpg" },
+    { alt: "Cantante del mariachi interpretando en vivo", image: "images/gallery/cantante-en-vivo.jpg" },
+    { alt: "Mariachi Voces de Colombia en un evento privado", image: "images/gallery/mariachi-en-evento.jpg" }
   ]
 };
 
@@ -103,14 +104,18 @@ function renderEvents() {
 }
 
 function renderVideos() {
-  document.querySelector("#video-grid").innerHTML = CONFIG.videos.map((video) => `
-    <article class="video-card">
-      <a href="${video.url}" target="_blank" rel="noopener noreferrer" aria-label="Ver ${video.title} en YouTube">
-        <div class="video-poster"><img src="${video.image}" alt="" loading="lazy"><span class="video-play" aria-hidden="true">▶</span></div>
-      </a>
-      <div class="video-info"><strong>${video.title}</strong><span>${video.subtitle}</span></div>
-    </article>
-  `).join("");
+  document.querySelector("#video-grid").innerHTML = CONFIG.videos.map((video) => {
+    const poster = `<div class="video-poster"><img src="${video.image}" alt="" loading="lazy" decoding="async">${video.url ? '<span class="video-play" aria-hidden="true">▶</span>' : ""}</div>`;
+    const media = video.url
+      ? `<a href="${video.url}" target="_blank" rel="noopener noreferrer" aria-label="Ver ${video.title} en YouTube">${poster}</a>`
+      : poster;
+    return `
+      <article class="video-card">
+        ${media}
+        <div class="video-info"><strong>${video.title}</strong><span>${video.subtitle}</span></div>
+      </article>
+    `;
+  }).join("");
 }
 
 function renderGallery() {
